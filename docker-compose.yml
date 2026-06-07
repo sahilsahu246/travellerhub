@@ -1,0 +1,77 @@
+# Local end-to-end bring-up: MongoDB + Redis + backend + frontend.
+# Run from the repo root:  docker compose up -d --build
+# Env keys below are taken verbatim from backend/.env.sample (this fork uses PORT=8080
+# and FRONTEND_URL for CORS — not CORS_ORIGIN).
+#
+# NOTE: the backend uses host port 8080, which is also Jenkins' default port. That only
+# matters if you run this compose stack on the same machine as Jenkins; on your Mac it's fine.
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - travellerhub
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - travellerhub
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    restart: unless-stopped
+    environment:
+      PORT: "8080"
+      MONGODB_URI: "mongodb://mongo:27017/wanderlust"
+      REDIS_URL: "redis://redis:6379"
+      FRONTEND_URL: "http://localhost:5173"
+      BACKEND_URL: "http://localhost:8080"
+      NODE_ENV: "Development"
+      JWT_SECRET: "local-dev-secret-change-me"
+      ACCESS_COOKIE_MAXAGE: "120000"
+      ACCESS_TOKEN_EXPIRES_IN: "120s"
+      REFRESH_COOKIE_MAXAGE: "120000"
+      REFRESH_TOKEN_EXPIRES_IN: "120s"
+      # Google login needs real values; the rest of the app runs fine without them.
+      GOOGLE_CLIENT_ID: "your_actual_google_client_id_here"
+      GOOGLE_CLIENT_SECRET: "your_actual_google_client_secret_here"
+    depends_on:
+      - mongo
+      - redis
+    ports:
+      - "8080:8080"
+    networks:
+      - travellerhub
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_PATH: "http://localhost:8080"
+    container_name: frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+    networks:
+      - travellerhub
+
+volumes:
+  mongo_data:
+
+networks:
+  travellerhub:
+    driver: bridge

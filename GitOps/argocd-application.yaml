@@ -1,0 +1,26 @@
+# ArgoCD Application: watches the kubernetes/ folder on your devops-end-to-end branch
+# and keeps the cluster in sync with it. Apply once on the master:
+#   kubectl apply -f GitOps/argocd-application.yaml
+#
+# After this, the flow is fully GitOps: Jenkins bumps the image tag in kubernetes/*.yaml
+# and pushes -> ArgoCD detects the commit -> syncs -> new version rolls out.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: travellerhub
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sahilsahu246/travellerhub.git
+    targetRevision: devops-end-to-end
+    path: kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: wanderlust
+  syncPolicy:
+    automated:
+      prune: true      # delete resources removed from Git
+      selfHeal: true   # revert manual drift back to Git state
+    syncOptions:
+      - CreateNamespace=true

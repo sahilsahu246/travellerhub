@@ -1,0 +1,47 @@
+# Frontend (nginx serving the built Vite bundle).
+# Reminder: the backend URL is baked into this image at build time via the VITE_API_PATH
+# build-arg in the Jenkinsfile — it is NOT set here as an env var.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: wanderlust
+  labels:
+    app: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          # CI rewrites this tag on every successful build.
+          image: <DOCKERHUB_USER>/wanderlust-frontend:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: wanderlust
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 31000
+  type: NodePort
