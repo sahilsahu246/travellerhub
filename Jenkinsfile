@@ -15,7 +15,7 @@ pipeline {
         FRONTEND_IMAGE  = "${DOCKERHUB_USER}/wanderlust-frontend"
         IMAGE_TAG       = "${BUILD_NUMBER}"
         // Browser-facing backend URL (backend NodePort). Baked into the frontend bundle.
-        VITE_API_PATH   = 'http://<NODE_PUBLIC_IP>:31100'
+        VITE_API_PATH   = 'http://65.0.185.152:31100'
         // Default OFF: the repo's backend "test" script uses `jest --watchAll`, which never
         // exits and would hang the pipeline. Set to 'true' only with the CI command below.
         RUN_TESTS       = 'false'

@@ -13,8 +13,8 @@ data:
   # Public NodePort URLs the BROWSER uses. FRONTEND_URL is the CORS origin; BACKEND_URL is
   # used for OAuth callbacks/cookies. Replace <NODE_PUBLIC_IP> with a node's public IP
   # (kubectl get nodes -o wide). 31000 = frontend NodePort, 31100 = backend NodePort.
-  FRONTEND_URL: "http://<NODE_PUBLIC_IP>:31000"
-  BACKEND_URL: "http://<NODE_PUBLIC_IP>:31100"
+  FRONTEND_URL: "http://65.0.185.152:31000"
+  BACKEND_URL: "http://65.0.185.152:31100"
   ACCESS_COOKIE_MAXAGE: "120000"
   ACCESS_TOKEN_EXPIRES_IN: "120s"
   REFRESH_COOKIE_MAXAGE: "120000"
@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: <DOCKERHUB_USER>/wanderlust-backend:latest   # CI rewrites this tag
+          image: sahilsahu246/wanderlust-backend:latest   # CI rewrites this tag
           ports:
             - containerPort: 8080
           envFrom:
