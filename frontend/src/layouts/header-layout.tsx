@@ -63,7 +63,7 @@ function header() {
               <img src={AppIcon} className="h-10 w-10" />
             </Link>
             <Link to="/" style={{ textDecoration: 'none' }}>
-              WanderLust
+              TravellerHub
             </Link>
           </div>
           <div className="flex items-center justify-between">

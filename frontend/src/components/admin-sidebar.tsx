@@ -38,7 +38,7 @@ const AdminSidebar = () => {
             onClick={() => navigate('/')}
             className="cursor-pointer text-xl font-medium text-light-title dark:text-dark-title"
           >
-            WanderLust
+            TravellerHub
           </h1>
         </div>
         <div className="flex flex-col gap-2 p-6">

@@ -31,7 +31,7 @@ function NotFound() {
         <div className="absolute inset-0 flex flex-col bg-white px-4 py-8 text-black dark:bg-dark  dark:text-slate-50 sm:px-16">
           <div className="flex w-full justify-between">
             <div className="flex cursor-text items-center justify-between text-2xl font-semibold">
-              WanderLust
+              TravellerHub
             </div>
             <div className="flex justify-between">
               <div

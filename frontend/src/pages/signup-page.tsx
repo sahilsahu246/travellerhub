@@ -106,7 +106,7 @@ function Signup() {
       <div className="m-4 mb-4 flex justify-center">
         <div className="flex w-full items-center justify-center">
           <h2 className="w-2/4 pl-2 text-center text-lg font-bold text-black dark:text-dark-primary sm:text-xl md:w-3/4 md:pl-48">
-            Sign up to WanderLust
+            Sign up to TravellerHub
           </h2>
           <div className="flex items-center justify-end px-4 sm:px-20">
             <ThemeToggle />
