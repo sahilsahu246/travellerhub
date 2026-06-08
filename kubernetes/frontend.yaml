@@ -18,10 +18,16 @@ spec:
       labels:
         app: frontend
     spec:
+      imagePullSecrets:
+        - name: dockerhub-creds
       containers:
         - name: frontend
+<<<<<<< HEAD
           # CI rewrites this tag on every successful build.
           image: sahilsahu6246/wanderlust-frontend:8
+=======
+          image: sahilsahu6246/wanderlust-frontend:latest
+>>>>>>> 4331190 (Add imagePullSecret for private Docker Hub repos)
           ports:
             - containerPort: 80
           resources:

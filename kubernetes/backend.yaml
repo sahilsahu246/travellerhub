@@ -10,9 +10,6 @@ data:
   MONGODB_URI: "mongodb://mongodb:27017/wanderlust"
   REDIS_URL: "redis://redis:6379"
   NODE_ENV: "production"
-  # Public NodePort URLs the BROWSER uses. FRONTEND_URL is the CORS origin; BACKEND_URL is
-  # used for OAuth callbacks/cookies. Replace <NODE_PUBLIC_IP> with a node's public IP
-  # (kubectl get nodes -o wide). 31000 = frontend NodePort, 31100 = backend NodePort.
   FRONTEND_URL: "http://65.0.185.152:31000"
   BACKEND_URL: "http://65.0.185.152:31100"
   ACCESS_COOKIE_MAXAGE: "120000"
@@ -48,9 +45,15 @@ spec:
       labels:
         app: backend
     spec:
+      imagePullSecrets:
+        - name: dockerhub-creds
       containers:
         - name: backend
+<<<<<<< HEAD
           image: sahilsahu6246/wanderlust-backend:8
+=======
+          image: sahilsahu6246/wanderlust-backend:latest
+>>>>>>> 4331190 (Add imagePullSecret for private Docker Hub repos)
           ports:
             - containerPort: 8080
           envFrom:
