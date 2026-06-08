@@ -1,124 +1,360 @@
-<div>
-  <h1>TravellerHub</h1>
-  <h2>The Ultimate Travel Blog Website 🌍✈️ for You </h2>
-</div>
+# 🚀 TravellerHub – Cloud-Native DevOps Platform
 
-![Preview Image](https://github.com/krishnaacharyaa/wanderlust/assets/116620586/17ba9da6-225f-481d-87c0-5d5a010a9538)
+A production-grade cloud-native travel platform built using the MERN stack and deployed on AWS using modern DevOps, GitOps, Kubernetes, observability, and security best practices.
 
-<hr>
+## 📖 Overview
 
-<div>
-  <h2>🔗 Important Links</h2>
-</div>
+TravellerHub is based on the Wanderlust TypeScript MERN application and demonstrates a complete end-to-end DevOps workflow:
 
-<table border="1">
-  <tr>
-      <td><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/5ca6c472-5c73-41b2-a2df-389cc3e14881.png" alt="Discord Logo" width="50"></td>
-      <td><a href="https://discord.gg/FEKasAdCrG"> Join our project's Discord Channel here </a></td>
-  </tr>
-  <tr>
-      <td><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/ffda08c0-3c7a-46b0-b7ac-6bc374184ec7.png" alt="Figma Logo" width="50"></td>
-      <td><a href="https://www.figma.com/file/zqNcWGGKBo5Q2TwwVgR6G5/WanderLust--A-Travel-Blog-App?type=design&node-id=0%3A1&mode=design&t=c4oCG8N1Fjf7pxTt-1"> Find our project's Figma links here</a></td>
-  </tr>
-  <tr>
-      <td><img src="https://github.com/krishnaacharyaa/wanderlust/assets/133582566/47d71dd6-0390-479e-9d4e-3f077ef1a987.png" alt="YouTube Logo" width="50"></td>
-      <td><a href="https://youtu.be/ANfC1u_N_A0?feature=shared"> Find our Collaboration Video with TrainwithShubham here </a></td>
-  </tr>
-</table>
+* Infrastructure on AWS
+* Containerization with Docker
+* CI/CD using Jenkins
+* GitOps with ArgoCD
+* Kubernetes on Amazon EKS
+* Security Scanning (OWASP Dependency Check, Trivy)
+* Code Quality Analysis (SonarQube)
+* Monitoring with Prometheus & Grafana
+* Redis Caching
+* MongoDB Persistence
 
-<hr>
+---
 
-<div>
-  <h2><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/4a07b161-b8d6-4803-804a-3b0db699023e" width="35" height="35"> Goal of this project </h2>
-</div>
+## 🏗️ Architecture
 
-At its core, this project embodies two important aims:
+```text
+Developer
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+Jenkins CI Pipeline
+ ├── SonarQube Analysis
+ ├── OWASP Dependency Check
+ ├── Trivy Security Scan
+ ├── Docker Build
+ └── Docker Push
+    │
+    ▼
+GitOps Repository Update
+    │
+    ▼
+ArgoCD
+    │
+    ▼
+Amazon EKS
+ ├── Frontend (React + Vite)
+ ├── Backend (Node.js + Express)
+ ├── MongoDB
+ └── Redis
+    │
+    ▼
+Prometheus + Grafana
+```
 
-1. **Start Your Open Source Journey**: It's aimed to kickstart your open-source journey. Here, you'll learn the basics of Git and get a solid grip on the MERN stack and I strongly believe that learning and building should go hand in hand.
-2. **React Mastery**: Once you've got the basics down, a whole new adventure begins of mastering React. This project covers everything, from simple form validation to advanced performance enhancements. And I've planned much more cool stuff to add in the near future if the project hits more number of contributors.
+---
 
-_We want you to get the most out of this project—it's all about learning, contributing, and growing in the open-source community._
-<hr>
+## 🛠️ Tech Stack
 
-<div>
-  <h2><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/1ee5934a-27be-4502-a7bf-e6a8c78fe5a3" width="35" height="35"> Features</h2>
-</div>
+### Frontend
 
-- **Featured Posts :** Highlight top travel stories and destinations on the homepage to showcase the best content and inspire readers with exciting travel experiences.
-- **User-Friendly Interface:** Navigate effortlessly through captivating travel content with our intuitive design.
-- **Discover By topic categories:** **Discover by Topic Categories**: Explore diverse travel experiences categorized by travel, nature, city, Adventure and Beaches..
-  
-<hr>
+* React
+* TypeScript
+* Vite
+* Nginx
 
-<div>
-  <h2><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/90f3930e-5a12-4a4e-8ac9-0dc7d5396adb" width="35" height="35"> Ready to Contribute?</h2>
-</div>
+### Backend
 
-Kindly go through [CONTRIBUTING.md](https://github.com/krishnaacharyaa/wanderlust/blob/main/.github/CONTRIBUTING.md) to understand everything from setup to contributing guidelines.
+* Node.js
+* Express.js
+* TypeScript
+* JWT Authentication
 
-If you would like to contribute to the project, please follow our contribution guidelines.
+### Database & Cache
 
-<hr>
-<!-- Open Source Programs -->
-  <div>
-    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" > Open Source Programs</h2>
-  </div>
+* MongoDB
+* Redis
 
-  <table border="1" cellpadding="10">
-        <tr>
-            <td rowspan="2">
-                <img src="https://github.com/Meetjain1/wanderlust/assets/133582566/21b2bc42-bdd5-487a-a083-1b262c2f6d9b" alt="GSSOC Logo" width="100" height="55">
-            </td>
-            <td>
-                <strong>GSSOC 2024</strong>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                This project is part of GirlScript Summer of Code. We warmly welcome contributions from the community to help elevate Wanderlust.
-            </td>
-        </tr>
-    </table>
+### DevOps
 
-<hr>
+* Docker
+* Jenkins
+* SonarQube
+* OWASP Dependency Check
+* Trivy
+* ArgoCD
 
-<!-- Code of conduct -->
-<div>
-<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
-</div>
+### Cloud & Infrastructure
 
-Please note that this project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* AWS EC2
+* Amazon EKS
+* IAM
+* VPC
+* Security Groups
+* EBS CSI Driver
 
-<hr>
+### Monitoring
 
-<!-- License -->
-<div>
-<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Page%20with%20Curl.png" width="35" height="35"> License</h2>
-</div>
+* Prometheus
+* Grafana
 
-This project is licensed under the [MIT License](./LICENSE).
+---
 
-<hr>
+## 📂 Repository Structure
 
-<div>
-  <h2><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/af38ec84-7387-4af7-af85-8f408a4654e9" width="35" height="35"> Show Your Support</h2>
-</div>
+```text
+travellerhub/
+├── backend/
+├── frontend/
+├── docker-compose.yml
+├── Jenkinsfile
+├── kubernetes/
+│   ├── namespace.yaml
+│   ├── mongodb.yaml
+│   ├── redis.yaml
+│   ├── backend.yaml
+│   └── frontend.yaml
+├── GitOps/
+│   └── argocd-application.yaml
+└── README.md
+```
 
-If you find this project interesting and inspiring, please consider showing your support by starring it on GitHub! Your star goes a long way in helping me reach more developers and encourages me to keep enhancing the project.
+---
 
-Feel free to get in touch with me for any further queries or support, happy to help :)
+## ⚙️ Local Development
 
-<hr>
+### Clone Repository
 
- <!-- Cotributors -->
-<div>
-  <h2><img src="https://github.com/Meetjain1/wanderlust/assets/133582566/20610b38-b287-4bf0-8f28-932b9c76163d" width="40" height="40"> Contributors</h2>
-</div>
+```bash
+git clone https://github.com/sahilsahu246/travellerhub.git
+cd travellerhub
+```
 
-We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating Wanderlust to greater heights. 😊
+### Configure Environment
 
-<div>
-<a href="https://github.com/krishnaacharyaa/wanderlust/graphs/contributors">
-  <img width="90%" src="https://contrib.rocks/image?repo=krishnaacharyaa/wanderlust" />
-</a>
-</div>
+```bash
+cp backend/.env.sample backend/.env
+cp frontend/.env.sample frontend/.env
+```
+
+### Start Application
+
+```bash
+docker compose up -d --build
+```
+
+### Seed Database
+
+```bash
+docker cp backend/data/sample_posts.json mongo:/sample_posts.json
+
+docker compose exec mongo mongoimport \
+--db wanderlust \
+--collection posts \
+--file /sample_posts.json \
+--jsonArray
+```
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## ☁️ AWS Infrastructure
+
+### Region
+
+```text
+ap-south-1 (Mumbai)
+```
+
+### Components
+
+* Custom VPC
+* Internet Gateway
+* Public & Private Subnets
+* Route Tables
+* Security Groups
+* EC2 Instances
+* Amazon EKS Cluster
+* Managed Node Groups
+* IAM Roles
+
+---
+
+## 🚀 CI/CD Pipeline
+
+### Jenkins Stages
+
+1. Source Checkout
+2. Dependency Installation
+3. SonarQube Analysis
+4. OWASP Dependency Check
+5. Trivy Security Scan
+6. Docker Build
+7. Docker Push
+8. GitOps Manifest Update
+9. Git Push
+
+---
+
+## 🔄 GitOps Workflow
+
+ArgoCD continuously monitors:
+
+```text
+kubernetes/
+```
+
+Any manifest change automatically triggers deployment to EKS.
+
+---
+
+## 📊 Monitoring Stack
+
+### Prometheus
+
+Metrics collection for:
+
+* Kubernetes
+* Nodes
+* Pods
+* Containers
+
+### Grafana
+
+Dashboards for:
+
+* Cluster Health
+* CPU Usage
+* Memory Usage
+* Pod Metrics
+* Node Metrics
+
+---
+
+## 🔐 Security
+
+### Code Security
+
+* SonarQube
+* OWASP Dependency Check
+
+### Container Security
+
+* Trivy Image Scanning
+
+### Cloud Security
+
+* IAM Roles
+* Security Groups
+* Private Networking
+
+---
+
+## 🌍 Application Access
+
+### Frontend
+
+```text
+http://<NODE_PUBLIC_IP>:31000
+```
+
+### Backend
+
+```text
+http://<NODE_PUBLIC_IP>:31100
+```
+
+### Jenkins
+
+```text
+http://<MASTER_IP>:8080
+```
+
+### SonarQube
+
+```text
+http://<MASTER_IP>:9000
+```
+
+### ArgoCD
+
+```text
+https://<NODE_PUBLIC_IP>:<ARGOCD_NODEPORT>
+```
+
+### Grafana
+
+```text
+http://<NODE_PUBLIC_IP>:<GRAFANA_NODEPORT>
+```
+
+---
+
+## 🎯 Key Learning Outcomes
+
+* AWS Networking
+* Kubernetes Administration
+* GitOps with ArgoCD
+* CI/CD Automation
+* Container Security
+* Observability
+* Infrastructure Management
+* Cloud-Native Architecture
+
+---
+
+## 👨‍💻 Author
+
+**Sahil Kumar Sahu**
+
+GitHub: https://github.com/sahilsahu246
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a star on GitHub.
+
+---
+
+## 🙏 Special Credits
+
+This project is built upon the excellent open-source work of the Wanderlust project created by Krishna Acharyaa.
+
+A huge thank you to:
+
+- GitHub: https://github.com/krishnaacharyaa
+- Original Repository: https://github.com/krishnaacharyaa/wanderlust
+
+While this repository extends the original application with a complete Cloud-Native DevOps ecosystem including:
+
+- Docker Containerization
+- Jenkins CI/CD
+- SonarQube Code Analysis
+- OWASP Dependency Check
+- Trivy Security Scanning
+- Amazon EKS
+- Kubernetes Deployments
+- ArgoCD GitOps
+- Prometheus Monitoring
+- Grafana Dashboards
+- AWS Infrastructure Setup
+
+The core application functionality and foundation were originally developed by Krishna Acharyaa. This project serves as a DevOps transformation and production-grade deployment implementation of the original Wanderlust application.
+
+Special thanks for creating and open-sourcing such an amazing project for the community. 🚀
+
+<p align="center">
+  <a href="https://github.com/krishnaacharyaa/wanderlust">
+    <img src="https://img.shields.io/badge/Based%20on-Wanderlust-blue?style=for-the-badge" />
+  </a>
+  <img src="https://img.shields.io/badge/AWS-EKS-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GitOps-ArgoCD-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/CI%2FCD-Jenkins-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Monitoring-Prometheus%20%26%20Grafana-yellow?style=for-the-badge" />
+</p>
