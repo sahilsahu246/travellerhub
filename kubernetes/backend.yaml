@@ -49,7 +49,7 @@ spec:
         - name: dockerhub-creds
       containers:
         - name: backend
-          image: sahilsahu6246/wanderlust-backend:9
+          image: sahilsahu6246/wanderlust-backend:11
           ports:
             - containerPort: 8080
           envFrom:
