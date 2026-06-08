@@ -43,12 +43,10 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh '''
-                        ${SCANNER_HOME}/bin/sonar-scanner \
-                          -Dsonar.projectKey=travellerhub \
-                          -Dsonar.projectName=travellerhub \
-                          -Dsonar.sources=backend,frontend
-                    '''
+                    script {
+                        def scannerHome = tool 'sonar-scanner'
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=travellerhub -Dsonar.projectName=travellerhub -Dsonar.sources=backend,frontend"
+                    }
                 }
             }
         }
