@@ -23,7 +23,7 @@ spec:
         - name: dockerhub-creds
       containers:
         - name: frontend
-          image: sahilsahu6246/wanderlust-frontend:11
+          image: sahilsahu6246/wanderlust-frontend:12
           ports:
             - containerPort: 80
           resources:

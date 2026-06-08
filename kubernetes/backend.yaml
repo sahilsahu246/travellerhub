@@ -50,7 +50,7 @@ spec:
         - name: dockerhub-creds
       containers:
         - name: backend
-          image: sahilsahu6246/wanderlust-backend:11
+          image: sahilsahu6246/wanderlust-backend:12
           ports:
             - containerPort: 8080
           envFrom:
