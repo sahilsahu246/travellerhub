@@ -49,11 +49,7 @@ spec:
         - name: dockerhub-creds
       containers:
         - name: backend
-<<<<<<< HEAD
-          image: sahilsahu6246/wanderlust-backend:8
-=======
           image: sahilsahu6246/wanderlust-backend:latest
->>>>>>> 4331190 (Add imagePullSecret for private Docker Hub repos)
           ports:
             - containerPort: 8080
           envFrom:
