@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: sahilsahu246/wanderlust-backend:latest   # CI rewrites this tag
+          image: sahilsahu6246/wanderlust-backend:latest   # CI rewrites this tag
           ports:
             - containerPort: 8080
           envFrom:

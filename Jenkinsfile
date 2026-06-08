@@ -10,7 +10,7 @@ pipeline {
     agent { label 'worker-node' }
 
     environment {
-        DOCKERHUB_USER  = 'sahilsahu246'                          // <-- your Docker Hub username
+        DOCKERHUB_USER  = 'sahilsahu6246'                          // <-- your Docker Hub username
         BACKEND_IMAGE   = "${DOCKERHUB_USER}/wanderlust-backend"
         FRONTEND_IMAGE  = "${DOCKERHUB_USER}/wanderlust-frontend"
         IMAGE_TAG       = "${BUILD_NUMBER}"

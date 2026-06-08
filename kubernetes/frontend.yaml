@@ -21,7 +21,7 @@ spec:
       containers:
         - name: frontend
           # CI rewrites this tag on every successful build.
-          image: sahilsahu246/wanderlust-frontend:latest
+          image: sahilsahu6246/wanderlust-frontend:latest
           ports:
             - containerPort: 80
           resources:
